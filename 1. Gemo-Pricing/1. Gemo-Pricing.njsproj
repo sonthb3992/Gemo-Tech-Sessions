@@ -30,8 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="app.ts" />
+    <Content Include="Domain\BreakfastOrder.ts" />
     <Content Include="Domain\Interfaces\OderDecorator.ts" />
-    <Content Include="Domain\ServingSizeDecorator.ts" />
+    <Content Include="Domain\MilkDecorator.ts" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
@@ -44,11 +45,13 @@
   <ItemGroup>
     <TypeScriptCompile Include="Domain\AvailableMenuOption.ts" />
     <TypeScriptCompile Include="Domain\Bartender.ts" />
+    <TypeScriptCompile Include="Domain\ChocolateSauceDecorator.ts" />
+    <TypeScriptCompile Include="Domain\DrinkOrder.ts" />
     <TypeScriptCompile Include="Domain\ServingSize.ts" />
     <TypeScriptCompile Include="Domain\Interfaces\IOrder.ts" />
-    <TypeScriptCompile Include="Domain\Oder.ts" />
     <TypeScriptCompile Include="Domain\ServingStyle.ts" />
-    <TypeScriptCompile Include="Domain\ServingStyleDecorator.ts" />
+    <TypeScriptCompile Include="Domain\TurkeyDecorator.ts" />
+    <TypeScriptCompile Include="Domain\WhippedCreamDecorator.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

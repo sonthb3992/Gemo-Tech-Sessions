@@ -10,9 +10,10 @@ class ServingSize {
      * @param name The name of the style.
      * @param price The base price of the menu option.
      */
-    constructor(name, price) {
+    constructor(name, price, ...acceptStyles) {
         this.name = name;
         this.price = price;
+        this.acceptStyle = acceptStyles;
     }
     /**
      * Gets the name of the menu option.
@@ -28,6 +29,17 @@ class ServingSize {
     getBasePrice() {
         return this.price;
     }
+    hasSizeAvailable(style) {
+        if (this.acceptStyle == null || this.acceptStyle.length == 0)
+            return true;
+        return this.acceptStyle.includes(style.getName());
+    }
 }
 exports.ServingSize = ServingSize;
+ServingSize.AvailableServingSizes = [
+    new ServingSize("S", 0),
+    new ServingSize("M", 0.5),
+    new ServingSize("L", 1, "Cold", "Blended"),
+    new ServingSize("XL", 1.5, "Cold", "Blended"),
+];
 //# sourceMappingURL=ServingSize.js.map

@@ -39,4 +39,10 @@ class AvailableMenuOption {
     }
 }
 exports.AvailableMenuOption = AvailableMenuOption;
+AvailableMenuOption.AvailableOptions = [
+    new AvailableMenuOption("Coffee", "drink", 2),
+    new AvailableMenuOption("MilkTea", "drink", 2.25),
+    new AvailableMenuOption("Sandwich", "food", 3),
+    new AvailableMenuOption("Bagel", "food", 3),
+];
 //# sourceMappingURL=AvailableMenuOption.js.map

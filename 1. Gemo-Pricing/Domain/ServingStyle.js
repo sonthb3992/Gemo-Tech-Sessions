@@ -30,4 +30,10 @@ class ServingStyle {
     }
 }
 exports.ServingStyle = ServingStyle;
+// Initialize the list of available serving styles
+ServingStyle.availableServingStyles = [
+    new ServingStyle("Hot", 0),
+    new ServingStyle("Cold", 0),
+    new ServingStyle("Blended", 1),
+];
 //# sourceMappingURL=ServingStyle.js.map

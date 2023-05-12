@@ -1,27 +1,27 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ServingStyleDecorator = void 0;
-const OrderDecorator_1 = require("./Interfaces/OrderDecorator");
-/**
- * Represents a decorator that adds serving style to an existing order.
- */
-class ServingStyleDecorator extends OrderDecorator_1.OrderDecorator {
-    constructor(decoratedOrder, servingStyle) {
-        super(decoratedOrder);
-        this.servingStyle = servingStyle;
-    }
-    getDescription() {
-        const baseDescription = this.decoratedOrder.getDescription();
-        return `${baseDescription}, ${this.servingStyle.getName()}`;
-    }
-    getPrice() {
-        var basePrice = this.decoratedOrder.getPrice();
-        basePrice += this.servingStyle.getBasePrice();
-        return basePrice;
-    }
-    getStyle() {
-        return this.servingStyle;
-    }
-}
-exports.ServingStyleDecorator = ServingStyleDecorator;
+//import { AvailableMenuOption } from "./AvailableMenuOption";
+//import { IOrder } from "./Interfaces/IOrder";
+//import { OrderDecorator } from "./Interfaces/OrderDecorator";
+//import { ServingStyle } from "./ServingStyle";
+///**
+// * Represents a decorator that adds serving style to an existing order.
+// */
+//export class ServingStyleDecorator extends OrderDecorator {
+//    private servingStyle: ServingStyle;
+//    constructor(decoratedOrder: IOrder, servingStyle: ServingStyle) {
+//        super(decoratedOrder);
+//        this.servingStyle = servingStyle;
+//    }
+//    public getDescription(): string {
+//        const baseDescription = this.decoratedOrder.getDescription();
+//        return `${baseDescription}, ${this.servingStyle.getName()}`;
+//    }
+//    public getPrice(): number {
+//        var basePrice = this.decoratedOrder.getPrice();
+//        basePrice += this.servingStyle.getBasePrice();
+//        return basePrice;
+//    }
+//    public getStyle(): ServingStyle {
+//        return this.servingStyle;
+//    }
+//}
 //# sourceMappingURL=ServingStyleDecorator.js.map

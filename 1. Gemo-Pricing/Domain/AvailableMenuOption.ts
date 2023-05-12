@@ -2,6 +2,14 @@
  * Represents an available menu option (drink or food) with its name, type, and base price.
  */
 export class AvailableMenuOption {
+
+    public static AvailableOptions = [
+        new AvailableMenuOption("Coffee", "drink", 2),
+        new AvailableMenuOption("MilkTea", "drink", 2.25),
+        new AvailableMenuOption("Sandwich", "food", 3),
+        new AvailableMenuOption("Bagel", "food", 3),
+    ];
+
     private name: string;
     private type: string;
     private basePrice: number;

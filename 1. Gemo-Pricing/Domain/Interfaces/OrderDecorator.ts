@@ -22,7 +22,7 @@ export abstract class OrderDecorator implements IOrder {
      */
     constructor(decoratedOrder: IOrder) {
         this.decoratedOrder = decoratedOrder;
-        this.menuItemOption = decoratedOrder.menuItemOption;
+    //    this.menuItemOption = decoratedOrder.menuItemOption;
     }
 
     /**
@@ -41,7 +41,7 @@ export abstract class OrderDecorator implements IOrder {
      * Gets the menu item option of the decorated order.
      * @returns The menu item option of the decorated order.
      */
-    public getMenuItemOption(): AvailableMenuOption {
-        return this.decoratedOrder.menuItemOption;
-    }
+//    public getMenuItemOption(): AvailableMenuOption {
+//        return this.decoratedOrder.menuItemOption;
+//    }
 }

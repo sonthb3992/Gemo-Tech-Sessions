@@ -2,6 +2,15 @@
  * Represents an available menu option (drink or food) with its name, type, and base price.
  */
 export class ServingStyle {
+
+    // Initialize the list of available serving styles
+    public static availableServingStyles = [
+        new ServingStyle("Hot", 0),
+        new ServingStyle("Cold", 0),
+        new ServingStyle("Blended", 1),
+    ];
+
+
     private name: string;
     private price: number;
 

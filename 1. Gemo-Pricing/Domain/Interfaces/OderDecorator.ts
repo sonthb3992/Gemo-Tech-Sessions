@@ -10,6 +10,8 @@ export abstract class OrderDecorator implements IOrder {
      * The decorated order.
      */
     protected decoratedOrder: IOrder;
+    protected basePrice: number;
+
 
     /**
      * The menu item option of the decorated order.
@@ -22,7 +24,7 @@ export abstract class OrderDecorator implements IOrder {
      */
     constructor(decoratedOrder: IOrder) {
         this.decoratedOrder = decoratedOrder;
-        this.menuItemOption = decoratedOrder.menuItemOption;
+    //    this.menuItemOption = decoratedOrder.menuItemOption;
     }
 
     /**
@@ -36,12 +38,4 @@ export abstract class OrderDecorator implements IOrder {
      * @returns The price of the order decorator.
      */
     public abstract getPrice(): number;
-
-    /**
-     * Gets the menu item option of the decorated order.
-     * @returns The menu item option of the decorated order.
-     */
-    public getMenuItemOption(): AvailableMenuOption {
-        return this.decoratedOrder.menuItemOption;
-    }
 }

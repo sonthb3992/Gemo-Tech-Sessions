@@ -2,5 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const Bartender_1 = require("./Domain/Bartender");
 let b = new Bartender_1.Bartender();
-console.log(b);
+b.TakingOrders();
+b.PrintBill();
 //# sourceMappingURL=app.js.map

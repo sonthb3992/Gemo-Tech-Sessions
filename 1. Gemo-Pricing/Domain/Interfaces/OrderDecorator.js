@@ -11,14 +11,7 @@ class OrderDecorator {
      */
     constructor(decoratedOrder) {
         this.decoratedOrder = decoratedOrder;
-        this.menuItemOption = decoratedOrder.menuItemOption;
-    }
-    /**
-     * Gets the menu item option of the decorated order.
-     * @returns The menu item option of the decorated order.
-     */
-    getMenuItemOption() {
-        return this.decoratedOrder.menuItemOption;
+        //    this.menuItemOption = decoratedOrder.menuItemOption;
     }
 }
 exports.OrderDecorator = OrderDecorator;
