@@ -57,13 +57,12 @@ export class Bartender {
      */
     public TakingOrders() {
         this.orders = new Array<IOrder>();
-        while (true) {
-            const prompt = promptSync();
+        const prompt = promptSync();
 
+        while (true) {
             console.clear();
             console.log(`You have ordered ${this.orders.length.toString()} item(s).`);
             if (this.orders.length >= 1) {
-
                 console.log("Do you want to order more item?");
                 console.log("1: yes");
                 console.log("2: no");
@@ -89,19 +88,21 @@ export class Bartender {
     public TakingOrder(): IOrder {
 
         console.clear();
-
-        console.log("Available Menu Options:");
-        AvailableMenuOption.AvailableOptions.forEach((menuOption, index) => {
-            console.log(`${index + 1}. ${menuOption.getName()} - $${menuOption.getBasePrice()}`);
-        });
-
         const prompt = promptSync();
 
-        const selection = prompt("Please select a menu item by entering the corresponding number:");
-
-        const selectedIndex = parseInt(selection);
-        if (isNaN(selectedIndex) || selectedIndex < 1 || selectedIndex > AvailableMenuOption.AvailableOptions.length) {
-            console.log("Invalid selection. Please try again.");
+        var selectedIndex = 0;
+        while (true) {
+            console.log("Available Menu Options:");
+            AvailableMenuOption.AvailableOptions.forEach((menuOption, index) => {
+                console.log(`${index + 1}. ${menuOption.getName()} - $${menuOption.getBasePrice()}`);
+            });
+            const selection = prompt("Please select a menu item by entering the corresponding number:");
+            selectedIndex = parseInt(selection);
+            if (isNaN(selectedIndex) || selectedIndex < 1 || selectedIndex > AvailableMenuOption.AvailableOptions.length) {
+                console.log("Invalid selection. Please try again.");
+                continue;
+            }
+            break;
         }
 
         const selectedMenuOption = AvailableMenuOption.AvailableOptions[selectedIndex - 1];
@@ -156,7 +157,6 @@ export class Bartender {
 
             const prompt = promptSync();
             const selection = prompt("Please select by entering the corresponding number:");
-
             const selectedIndex = parseInt(selection);
             if (isNaN(selectedIndex) || selectedIndex < 1 || selectedIndex > 2) {
                 console.log("Invalid selection. Please try again.");

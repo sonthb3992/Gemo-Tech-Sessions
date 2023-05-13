@@ -53,8 +53,8 @@ class Bartender {
      */
     TakingOrders() {
         this.orders = new Array();
+        const prompt = promptSync();
         while (true) {
-            const prompt = promptSync();
             console.clear();
             console.log(`You have ordered ${this.orders.length.toString()} item(s).`);
             if (this.orders.length >= 1) {
@@ -80,15 +80,20 @@ class Bartender {
      */
     TakingOrder() {
         console.clear();
-        console.log("Available Menu Options:");
-        AvailableMenuOption_1.AvailableMenuOption.AvailableOptions.forEach((menuOption, index) => {
-            console.log(`${index + 1}. ${menuOption.getName()} - $${menuOption.getBasePrice()}`);
-        });
         const prompt = promptSync();
-        const selection = prompt("Please select a menu item by entering the corresponding number:");
-        const selectedIndex = parseInt(selection);
-        if (isNaN(selectedIndex) || selectedIndex < 1 || selectedIndex > AvailableMenuOption_1.AvailableMenuOption.AvailableOptions.length) {
-            console.log("Invalid selection. Please try again.");
+        var selectedIndex = 0;
+        while (true) {
+            console.log("Available Menu Options:");
+            AvailableMenuOption_1.AvailableMenuOption.AvailableOptions.forEach((menuOption, index) => {
+                console.log(`${index + 1}. ${menuOption.getName()} - $${menuOption.getBasePrice()}`);
+            });
+            const selection = prompt("Please select a menu item by entering the corresponding number:");
+            selectedIndex = parseInt(selection);
+            if (isNaN(selectedIndex) || selectedIndex < 1 || selectedIndex > AvailableMenuOption_1.AvailableMenuOption.AvailableOptions.length) {
+                console.log("Invalid selection. Please try again.");
+                continue;
+            }
+            break;
         }
         const selectedMenuOption = AvailableMenuOption_1.AvailableMenuOption.AvailableOptions[selectedIndex - 1];
         var order;
