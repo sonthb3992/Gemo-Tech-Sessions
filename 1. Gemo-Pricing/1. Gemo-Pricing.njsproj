@@ -40,7 +40,6 @@
   <ItemGroup>
     <Folder Include="Domain\" />
     <Folder Include="Domain\Interfaces\" />
-    <Folder Include="Domain\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Domain\AvailableMenuOption.ts" />

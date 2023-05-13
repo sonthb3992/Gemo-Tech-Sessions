@@ -1,5 +1,5 @@
 import { Bartender } from "./Domain/Bartender"
 
-let b = new Bartender();
-b.TakingOrders();
-b.PrintBill();
+let bartender = new Bartender();
+bartender.TakingOrders();
+bartender.PrintBill();
