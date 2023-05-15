@@ -36,6 +36,10 @@ class NewOrderContent extends StatefulWidget {
 }
 
 class _NewOrderContentState extends State<NewOrderContent> {
+  bool isBigSize() {
+    return MediaQuery.of(context).size.width > 800;
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -46,20 +50,26 @@ class _NewOrderContentState extends State<NewOrderContent> {
         body: Form(
           key: widget.formKey,
           child: Center(
-            child: ListView(
-              children: [
-                BaseItemDisplay(order: widget.order),
-                if (widget.order.getType() == "drink")
-                  const SizedBox(
-                    height: 10,
-                  ),
-                if (widget.order.getType() == "drink")
-                  StyleSelector(widget.order),
-                if (widget.order.getType() == "drink")
-                  SizeSelector(widget.order),
-                ToppingSelector(widget.order),
-                const TotalButton(),
-              ],
+            child: SizedBox(
+              width: isBigSize() ? 800 : null,
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: ListView(
+                  children: [
+                    BaseItemDisplay(order: widget.order),
+                    if (widget.order.getType() == "drink")
+                      const SizedBox(
+                        height: 10,
+                      ),
+                    if (widget.order.getType() == "drink")
+                      StyleSelector(widget.order),
+                    if (widget.order.getType() == "drink")
+                      SizeSelector(widget.order),
+                    ToppingSelector(widget.order),
+                    const TotalButton(),
+                  ],
+                ),
+              ),
             ),
           ),
         ),
